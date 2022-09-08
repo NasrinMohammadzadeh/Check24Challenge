@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/available_list_item_view.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/filter_list_item.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/fragment_product_list.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/unavailable_list_item_view.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/xml/network_security_config.xml" value="0.35520833333333335" />

@@ -8,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.check24challenge.databinding.FragmentProductListBinding
 import com.example.check24challenge.model.FilterItemModel
 import com.example.check24challenge.model.HeaderModel
+import com.example.check24challenge.model.ProductModel
 import com.example.check24challenge.system.enum.PageableListStatus
 import com.example.check24challenge.system.enum.RequestStatus
 import com.example.check24challenge.ui.productlist.viewmodel.ProductListViewModel
@@ -41,6 +43,23 @@ class ProductListFragment : Fragment() {
     private fun bindView() {
         val adapter = ProductListAdapter()
         binding.recycler.adapter = adapter
+
+        adapter.setOnItemClickListener(object : ProductListAdapter.OnItemClickListener{
+            override fun onItemClick(item: ProductModel, position: Int) {
+                findNavController().navigate(ProductListFragmentDirections.actionProductListFragmentToDetailFragment(
+                    title = item.name,
+                    image = item.imageURL,
+                    description = item.description,
+                    longDescription = item.longDescription,
+                    time = item.releaseDate,
+                    price = item.price.value.toFloat(),
+                    currency = item.price.currency,
+                    rate = item.rating.toFloat()
+                ))
+            }
+        })
+
+
         productListViewModel.result().observe(viewLifecycleOwner) {
             binding.swipeRefresh.isRefreshing = false
             it?.let { list ->

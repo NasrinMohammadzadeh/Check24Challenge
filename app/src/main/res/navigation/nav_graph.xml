@@ -9,5 +9,39 @@
         android:id="@+id/productListFragment"
         android:name="com.example.check24challenge.ui.productlist.ProductListFragment"
         android:label="ProductListFragment"
-        tools:layout="@layout/fragment_product_list"/>
+        tools:layout="@layout/fragment_product_list">
+        <action
+            android:id="@+id/action_productListFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.check24challenge.ui.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="image"
+            app:argType="string"/>
+        <argument
+            android:name="title"
+            app:argType="string"/>
+        <argument
+            android:name="description"
+            app:argType="string"/>
+        <argument
+            android:name="longDescription"
+            app:argType="string"/>
+        <argument
+            android:name="currency"
+            app:argType="string"/>
+        <argument
+            android:name="time"
+            app:argType="long"/>
+        <argument
+            android:name="price"
+            app:argType="float"/>
+        <argument
+            android:name="rate"
+            app:argType="float"/>
+    </fragment>
 </navigation>

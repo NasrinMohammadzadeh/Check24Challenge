@@ -9,6 +9,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="5dp"
         app:cardBackgroundColor="@color/white"
+        android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="5dp"
         app:cardElevation="2dp"
         app:strokeColor="@color/detail_color"

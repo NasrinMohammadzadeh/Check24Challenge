@@ -79,11 +79,25 @@ class ProductListAdapter : ListAdapter<ProductModel, RecyclerView.ViewHolder>(DI
 
   inner class AvailableItemHolder(val binding: AvailableListItemViewBinding, val view: View) : RecyclerView.ViewHolder(view) {
     init {
+      itemView.setOnClickListener {
+        val position = bindingAdapterPosition
+        if (listener != null && position != RecyclerView.NO_POSITION) {
+          val item = getItem(position)
+          listener!!.onItemClick(item, position)
+        }
+      }
     }
   }
 
   inner class UnavailableItemHolder(val binding: UnavailableListItemViewBinding, val view: View) : RecyclerView.ViewHolder(view) {
     init {
+      itemView.setOnClickListener {
+        val position = bindingAdapterPosition
+        if (listener != null && position != RecyclerView.NO_POSITION) {
+          val item = getItem(position)
+          listener!!.onItemClick(item, position)
+        }
+      }
     }
   }
 
