@@ -17,6 +17,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "API_URL", "\"http://app.check24.de/\"")
     }
 
     buildTypes {
@@ -78,6 +79,7 @@ dependencies {
     def retrofit_version = "2.9.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     // Okhttp
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.3"))
@@ -109,4 +111,7 @@ dependencies {
 
     // Preferences DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+    //event bus
+    implementation 'org.greenrobot:eventbus:3.1.1'
 }
